@@ -40,6 +40,16 @@ The repository is structured as follows:
 
 The main folders of interest are:
 
-* `exercises`: Contains the [exercises for the masterclass](./exercises/Responsive%20Navigation%20in%20Liferay.md).
+* `exercises`: Contains the [exercises for the masterclass](./../exercises/Responsive%20Navigation%20in%20Liferay.md).
 * `resources`: Contains the resources needed for the exercises. The `responsive-menus-collection.zip` is the fragment set needed for the exercises and the `dxp-blue-fragments.zip` is a optional collection of fragments which help give more content to the pages within the workspace.
 * `workspace`: Contains a Liferay 2025 Q1.8 LTS workspace for development. It has a local configuration aimed at making local development easier.
+
+## Resources
+
+Marketplace - <https://marketplace.liferay.com/p/responsive-menu-fragments>
+
+<img src="./images/marketplace.png" width="100" alt="Marketplace QR Code">
+
+Source Code - <https://github.com/peterrichards-lr/liferay-fragments/tree/main/responsive-menus>
+
+<img src="./images/source.png" width="100" alt="Source Code QR Code">
