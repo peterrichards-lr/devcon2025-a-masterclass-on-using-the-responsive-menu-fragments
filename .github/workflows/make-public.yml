@@ -1,0 +1,31 @@
+name: Make repository public
+
+on:
+  schedule:
+    - cron: "7/5 * * * *"  # every 5 minutes, offset from the hour
+permissions:
+  contents: read
+
+jobs:
+  make_public:
+    if: github.repository_visibility == 'private'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compute target
+        id: t
+        run: |
+          target_iso="${{ vars.PUBLIC_AT_ISO }}" 
+          echo "target=$(date -u -d "$target_iso" +%s)" >> $GITHUB_OUTPUT
+          echo "now=$(date -u +%s)" >> $GITHUB_OUTPUT
+      - name: Flip to public
+        if: steps.t.outputs.now >= steps.t.outputs.target
+        env:
+          GH_TOKEN: ${{ secrets.REPO_ADMIN_PAT }}
+        run: |
+          owner="${GITHUB_REPOSITORY%%/*}"
+          repo="${GITHUB_REPOSITORY##*/}"
+          curl -sS -X PATCH \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/$owner/$repo \
+            -d '{"visibility":"public"}'
