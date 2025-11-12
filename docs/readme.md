@@ -46,7 +46,11 @@ The main folders of interest are:
 
 ## Resources
 
-Marketplace - <https://marketplace.liferay.com/p/responsive-menu-fragments>
+Liferay.Dev Blog - <https://liferay.dev/b/responsive-navigation-in-liferay>
+
+<img src="./images/blog.png" width="100" alt="Liferay.dev Blog QR Code">
+
+Liferay Marketplace - <https://marketplace.liferay.com/p/responsive-menu-fragments>
 
 <img src="./images/marketplace.png" width="100" alt="Marketplace QR Code">
 
